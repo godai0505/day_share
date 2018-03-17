@@ -7,4 +7,12 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    #header_view
+      .header_left
+        %h1= link_to "Day Share", '/'
+      .header_right
+        #sign_in
+          = link_to "sign_in", sign_in_path
+    #content_view
+      = yield
+    #footer_view
