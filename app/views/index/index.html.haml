@@ -1,2 +1,24 @@
-hello world
+%h3#bookmark_list ブックマーク一覧
+=link_to '新規追加', new_bookmark_path, remote: true, class: "btn btn-lg btn-primary"
+#bookmark-modal.modal.fade{ tabindex: "-1", role: "dialog", aria: { hidden: "true" } }
 
+%table
+  %thead
+    %tr
+      %td "id"
+      %td タイトル
+      %td 説明
+      %td タグ
+      %td folder
+      %td
+  %tbody
+    - @bookmarks.each do |bm|
+      %tr
+        %td= bm.id
+        %td= bm.name
+        %td= bm.description
+        %td tags
+        %td folder
+        %td
+          %p.edit 編集
+          %p.delete 削除
