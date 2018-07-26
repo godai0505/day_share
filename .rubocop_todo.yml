@@ -56,19 +56,19 @@ Layout/EmptyLinesAroundBlockBody:
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: Width, IgnoredPatterns.
-Layout/IndentationWidth:
-  Exclude:
-    - 'app/controllers/bookmarks_controller.rb'
+#Layout/IndentationWidth:
+#  Exclude:
+#    - 'app/controllers/bookmarks_controller.rb'
 
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBrackets.
 # SupportedStyles: space, no_space, compact
 # SupportedStylesForEmptyBrackets: space, no_space
-Layout/SpaceInsideArrayLiteralBrackets:
-  Exclude:
-    - 'app/controllers/application_controller.rb'
-    - 'config/environments/production.rb'
+#Layout/SpaceInsideArrayLiteralBrackets:
+#  Exclude:
+#    - 'app/controllers/application_controller.rb'
+#    - 'config/environments/production.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
