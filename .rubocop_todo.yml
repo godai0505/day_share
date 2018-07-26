@@ -92,9 +92,9 @@ Metrics/MethodLength:
 # Configuration parameters: Database, Include.
 # SupportedDatabases: mysql, postgresql
 # Include: db/migrate/*.rb
-Rails/BulkChangeTable:
-  Exclude:
-    - 'db/migrate/20180302151358_devise_create_users.rb'
+#Rails/BulkChangeTable:
+#  Exclude:
+#    - 'db/migrate/20180302151358_devise_create_users.rb'
 
 # Offense count: 1
 # Configuration parameters: EnforcedStyle.
