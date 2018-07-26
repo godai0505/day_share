@@ -40,10 +40,10 @@ Layout/EmptyLinesAroundBlockBody:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: empty_lines, empty_lines_except_namespace, empty_lines_special, no_empty_lines, beginning_only, ending_only
-Layout/EmptyLinesAroundClassBody:
-  Exclude:
-    - 'app/models/bookmark.rb'
-    - 'test/controllers/index_controller_test.rb'
+#Layout/EmptyLinesAroundClassBody:
+#  Exclude:
+#    - 'app/models/bookmark.rb'
+#    - 'test/controllers/index_controller_test.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
