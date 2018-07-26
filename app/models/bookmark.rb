@@ -1,5 +1,4 @@
 class Bookmark < ApplicationRecord
-
   belongs_to :users
   has_one :bookmark_detail
 
