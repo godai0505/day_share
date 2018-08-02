@@ -12,11 +12,13 @@ class BookmarksController < ApplicationController
   end
 
   def new
-    @bookmark = Bookmark.new
-    render "new.js.haml"
   end
 
   def create
+    @bookmark = Bookmark.new(bookmark_params)
+    @bookmark.user = current_user
+    @bookmark.save
+    redirect_to "/"
   end
 
   def update
@@ -34,5 +36,9 @@ class BookmarksController < ApplicationController
   private
   def set_bookmark
     @bookmark = Bookmark.find(params[:id])
+  end
+
+  def bookmark_params
+    params.require(:bookmark).permit(:name, :url)
   end
 end

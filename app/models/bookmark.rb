@@ -1,5 +1,5 @@
 class Bookmark < ApplicationRecord
-  belongs_to :users
+  belongs_to :user
   has_one :bookmark_detail
 
   def index
