@@ -1,22 +1,15 @@
 %h3#bookmark_list ブックマーク一覧
-= form_for @bookmark do |f|
-  = f.text_field :name
-  = f.text_field :url
-  = f.submit
+= link_to '新規追加', new_bookmark_path, remote: true, class: "btn btn-lg btn-primary"
+#bookmark-modal.modal.fade{:tabindex => "-1", :role => "dialog", :aria => { :hidden => "true" }}
 %table.table.table-striped.table-hover.table-sm
   %thead.thead-dark
     %tr
       %td id
       %td タイトル
       %td url
-      %td
+      %td 詳細
+      %td 編集
+      %td 削除
   %tbody
     - @bookmarks.each do |bm|
-      %tr
-        %td= bm.id
-        %td= bm.name
-        %td
-          = link_to bm.url, bm.url, target: "_blank"
-        %td
-          %a.edit 編集
-          %a.delete 削除
+      = render 'tr', bookmark: bm
