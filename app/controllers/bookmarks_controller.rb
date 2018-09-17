@@ -5,9 +5,6 @@ class BookmarksController < ApplicationController
     @bookmarks = Bookmark.all
   end
 
-  def show
-  end
-
   def edit
   end
 
@@ -35,16 +32,17 @@ class BookmarksController < ApplicationController
   def update
   end
 
-  def bulk_update
-  end
-
   def destroy
-  end
+    @bookmark.destroy
 
-  def bulk_destroy
+    respond_to do |format|
+      format.html { redirect_to '/', notice: 'Bookmark was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
+
   def set_bookmark
     @bookmark = Bookmark.find(params[:id])
   end
