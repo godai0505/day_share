@@ -1,17 +1,11 @@
-.modal-dialog
-  .modal-content
-    = form_for(@bookmark, remote: true) do |f|
-      .modal-header
-        .title ブックマークの新規追加
-        %button.close{:aria => {:label => "Close"}, :data => {:dismiss => "modal"}, :type => "button"}
-          %span{:aria => {:hidden => "true"}} &times;
-      .modal-body
-        .field.mb-3
-          = f.label :name
-          = f.text_field :name, class: "form-control", placeholder: "タイトル"
-        .field.mb-3
-          = f.label :url
-          = f.text_field :url, class: "form-control", placeholder: "xxxxx.com"
-      .modal-footer
-        %button.btn.btn-secondary{:type => "button", :data => {:dismiss => "modal"}} 閉じる
-        = f.submit "新規追加", class: "float-right btn btn-primary"
+= form_for(@bookmark, remote: true) do |f|
+  .modal-body
+    .field.mb-3
+      = f.label :name
+      = f.text_field :name, class: "form-control", placeholder: "タイトル"
+    .field.mb-3
+      = f.label :url
+      = f.text_field :url, class: "form-control", placeholder: "xxxxx.com"
+  .modal-footer
+    %button.btn.btn-secondary{:type => "button", :data => {:dismiss => "modal"}} 閉じる
+    = f.submit class: "float-right btn btn-primary"
