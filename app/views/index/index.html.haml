@@ -1,6 +1,7 @@
-%h3#bookmark_list ブックマーク一覧
-= link_to '新規追加', new_bookmark_path, remote: true, class: "btn btn-lg btn-primary"
-#bookmark-modal.modal.fade{:tabindex => "-1", :role => "dialog", :aria => { :hidden => "true" }}
+#content_title
+  %h3.float-left ブックマーク一覧
+  = link_to '新規追加', new_bookmark_path, data: {remote: true}, class: "float-right btn btn-primary"
+  #bookmark-modal.modal.fade{:tabindex => "-1", :role => "dialog", :aria => { :hidden => "true" }}
 %table.table.table-striped.table-hover.table-sm
   %thead.thead-dark
     %tr

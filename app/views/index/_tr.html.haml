@@ -1,7 +1,8 @@
 %tr
   %td= bookmark.id
   %td= bookmark.name
-  %td= bookmark.url
+  %td
+    = link_to bookmark.url, bookmark.url, :target => "_blank"
   %td= link_to '詳細', bookmark
   %td= link_to '編集', edit_bookmark_path(bookmark)
   %td= link_to '削除', bookmark, method: :delete, data: { confirm: 'Are you sure?'}
