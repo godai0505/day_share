@@ -1,0 +1,7 @@
+%tr{:class => "bookmark_#{bookmark.id}"}
+  %td= bookmark.id
+  %td= bookmark.name
+  %td
+    = link_to bookmark.url, bookmark.url, :target => "_blank"
+  %td= link_to '編集', edit_bookmark_path(bookmark), data: { remote: true }
+  %td= link_to '削除', bookmark, method: :delete, data: { confirm: '削除してもいいですか?'}

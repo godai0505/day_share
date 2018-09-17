@@ -1,22 +1,17 @@
-%h3#bookmark_list ブックマーク一覧
-= form_for @bookmark do |f|
-  = f.text_field :name
-  = f.text_field :url
-  = f.submit
+= stylesheet_link_tag 'index'
+
+#content_title
+  %h3.float-left ブックマーク一覧
+  = link_to '新規追加', new_bookmark_path, data: {remote: true}, class: "float-right btn btn-primary"
 %table.table.table-striped.table-hover.table-sm
   %thead.thead-dark
     %tr
-      %td id
-      %td タイトル
-      %td url
-      %td
+      %td.id id
+      %td.title タイトル
+      %td.url url
+      %td.edit 編集
+      %td.delete 削除
   %tbody
-    - @bookmarks.each do |bm|
-      %tr
-        %td= bm.id
-        %td= bm.name
-        %td
-          = link_to bm.url, bm.url, target: "_blank"
-        %td
-          %a.edit 編集
-          %a.delete 削除
+    - @bookmarks.each do |bookmark|
+      = render 'tr', bookmark: bookmark
+#bookmark-modal.modal.fade{:tabindex => "-1", :role => "dialog", :aria => { :hidden => "true" }}

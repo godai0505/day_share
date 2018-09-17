@@ -1,0 +1,7 @@
+.modal-dialog
+  .modal-content
+    .modal-header
+      .title ブックマークの追加
+      %button.close{:aria => {:label => "Close"}, :data => {:dismiss => "modal"}, :type => "button"}
+        %span{:aria => {:hidden => "true"}} &times;
+    = render 'form'

@@ -1,0 +1,6 @@
+- if @status == 'success'
+  $("tr.bookmark_#{@bookmark.id}").replaceWith("#{ j(render("index/tr", bookmark: @bookmark)) }");
+- elsif @status == 'fail'
+  alert('error!');
+
+$("#bookmark-modal").modal("hide");

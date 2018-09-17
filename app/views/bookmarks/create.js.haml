@@ -1,0 +1,6 @@
+- if @status == 'success'
+  $("tbody").append("#{ j(render("index/tr", bookmark: @bookmark)) }");
+- elsif @status == 'fail'
+  alert('error!');
+
+$("#bookmark-modal").modal("hide");

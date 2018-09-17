@@ -1,5 +1,11 @@
-- form_for(@bookmark, remote: true) do |f|
-  = f.text_field :name
-  = f.text_field :url
-  = f.checkbox_field :favarite
-  = f.checkbox_field :read_later
+= form_for(@bookmark, remote: true) do |f|
+  .modal-body
+    .field.mb-3
+      = f.label :name
+      = f.text_field :name, class: "form-control", placeholder: "タイトル"
+    .field.mb-3
+      = f.label :url
+      = f.text_field :url, class: "form-control", placeholder: "xxxxx.com"
+  .modal-footer
+    %button.btn.btn-secondary{:type => "button", :data => {:dismiss => "modal"}} 閉じる
+    = f.submit class: "float-right btn btn-primary"
