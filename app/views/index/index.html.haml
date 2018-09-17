@@ -12,5 +12,5 @@
       %td 編集
       %td 削除
   %tbody
-    - @bookmarks.each do |bm|
-      = render 'tr', bookmark: bm
+    - @bookmarks.each do |bookmark|
+      = render 'tr', bookmark: bookmark

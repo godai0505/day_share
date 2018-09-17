@@ -1,6 +1,6 @@
-= if @status == 'success'
-  $("tbody").append("<%= j(render("tr", bookmark: @bookmark)) %>");
-= elsif @status == 'fail'
+- if @status == 'success'
+  $("tbody").append("#{ j(render("index/tr", bookmark: @bookmark)) }");
+- elsif @status == 'fail'
   alert('error!');
-= end
-$("#user-modal").modal("hide");
+
+$("#bookmark-modal").modal("hide");

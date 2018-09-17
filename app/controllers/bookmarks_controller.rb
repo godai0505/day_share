@@ -16,11 +16,12 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    @bookmark = Test.new(bookmark_params)
+    @bookmark = Bookmark.new(bookmark_params)
+    @bookmark.user_id = current_user.id
 
     respond_to do |format|
       if @bookmark.save
-        format.html { redirect_to @bookmark, notice: 'Test was successfully created.' }
+        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
         format.json { render :show, status: :created, location: @bookmark }
         format.js { @status = "success" }
       else
