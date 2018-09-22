@@ -11,6 +11,8 @@ module Sociab
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
+    config.assets.initialize_on_precompile = false
+
     config.generators do |g|
       # 色々な記述があるので、一番下に追記する
       g.test_framework :rspec,
